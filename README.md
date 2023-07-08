@@ -20,12 +20,6 @@ auto training_data = std::vector<NeuralTrainingSample> {
     { { 1, 1 }, { 0 } },
 };
 
-// [ 2, 1 ] network layout
-NeuralNetwork network {
-    NeuralLayer<2, 2, Math::Activation::Gaussian>(),
-    NeuralLayer<2, 1, Math::Activation::Gaussian>()
-};
-
 // returns the best random network which is slightly trained.
 network.trainManyRandomNetworks<10000>(training_data, 100, 0.01f, 0.01f);
 std::cout << "Perf rand: " << network.performance(td) << '\n';
