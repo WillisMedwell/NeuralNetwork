@@ -1,7 +1,13 @@
+/*
+    Header only library
+    Purpose: Neural Network classes and utilities.
+
+    Created by: Willis Medwell
+    Date: 9/6/2023
+*/
 #pragma once
 
 #include "Math.hpp"
-#include "Tools.hpp"
 
 #include <algorithm>
 #include <cassert>

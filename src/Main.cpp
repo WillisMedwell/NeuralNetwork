@@ -1,6 +1,5 @@
 #include "Math.hpp"
 #include "Neural.hpp"
-#include "Tools.hpp"
 
 #include <array>
 #include <chrono>
@@ -12,7 +11,7 @@
 
 int main()
 {
-    Tools::Timerbomb tb;
+    auto start = std::chrono::high_resolution_clock::now();
 
     // xor behaviour
     auto td = std::vector<NeuralTrainingSample> {
@@ -41,5 +40,7 @@ int main()
     std::cout << "1 xor 0 = " << network.propagateForward(std::vector<float> { 1, 0 }).front() << '\n';
     std::cout << "1 xor 1 = " << network.propagateForward(std::vector<float> { 1, 1 }).front() << "\n\n";
     std::cout << network;
-}
 
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
+    std::cout << duration << "ms" << std::endl;
+}
