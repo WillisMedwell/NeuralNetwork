@@ -26,7 +26,12 @@
 *.a
 *.lib
 
-# Executables
+# Executables & debugging
 *.exe
 *.out
 *.app
+*.ilk
+*.pdb
+
+# Folders
+.vscode/
